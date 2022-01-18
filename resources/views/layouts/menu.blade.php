@@ -23,17 +23,17 @@
     </a>
 </li>
 
-@if(Auth::user()->can('dok admin'))
 
 <li class="nav-header">Adminisztrácíó</li>
 <li class="nav-item">
     <a href="/events" class="nav-link">
         <i class="nav-icon far fa-calendar-alt"></i>
         <p>
-            E-DÖK
+            Események
         </p>
     </a>
 </li>
+
 <li class="nav-item">
     <a href="/blog" class="nav-link">
         <i class="nav-icon fas fa-book"></i>
@@ -42,4 +42,5 @@
         </p>
     </a>
 </li>
+@if(Auth::user()->can('dok admin'))
 @endif

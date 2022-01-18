@@ -82,15 +82,7 @@
                 <div class="row">
                   <div class="col-7">
                     <h2 class="lead"><b>
-                    
-                      <?php
-                        
-                      $args = explode(",", Auth::user()->year);
-
-                      echo("Asd".$args[1]);
-
-                        ?>
-                    
+                  
                     </b></h2>
                     <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
                     <ul class="ml-4 mb-0 fa-ul text-muted">

@@ -16,14 +16,7 @@
           <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-    <style>
-        
-         .my_fav_font {
-            font-family: 'Indie Flower', cursive !important;
-            /* This will be applied. */
-        }
-          
-        </style>
+          <script src="{{ asset("js/ckeditor.js") }}"></script>
 
           
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">

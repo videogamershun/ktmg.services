@@ -19,6 +19,11 @@ Route::get('/', function () {
 Route::get('/events', function () {
     return view('events.index');
 });
+
+Route::get('/event_create', function () {
+    return view('events.event_create');
+});
+
 Route::get('/blog', function () {
     return view('blog.index');
 });

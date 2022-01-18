@@ -12,6 +12,7 @@ class EventMain extends Migration
         Schema::create('event_main', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('owner');
             $table->string('description');
             $table->timestamp('event_when')->nullable();
             $table->boolean('event_private');
