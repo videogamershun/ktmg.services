@@ -17,6 +17,7 @@
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
           <script src="{{ asset("js/ckeditor.js") }}"></script>
+          <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
           
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">

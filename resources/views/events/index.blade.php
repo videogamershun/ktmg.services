@@ -1,150 +1,160 @@
 @extends('layouts.app')
 
 @section('content')
-<br/>
-  <!-- Main content -->
-  <section class="content">
+@if (session('status'))
+<script>
+  swal("Siker!", "{{ session('status') }}!", "success");
+</script>
+@endif
+    <br />
+    <!-- Main content -->
+    <section class="content">
 
-    <!-- Default box -->
-    <div class="card card-solid">
-      <div class="card-body pb-0">
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-            <div class="card bg-light d-flex flex-fill">
-              <div class="card-header text-muted border-bottom-0">
-                Digital Strategist
-              </div>
-              <div class="card-body pt-0">
+        <!-- Default box -->
+        <div class="card card-solid">
+            <div class="card-body pb-0">
                 <div class="row">
-                  <div class="col-7">
-                    <h2 class="lead"><b>Nicole Pearson</b></h2>
-                    <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
-                    <ul class="ml-4 mb-0 fa-ul text-muted">
-                      <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
-                      <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
-                    </ul>
-                  </div>
-                  <div class="col-5 text-center">
-                    <img src="../../dist/img/user1-128x128.jpg" alt="user-avatar" class="img-circle img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer">
-                <div class="text-right">
-                  <a href="#" class="btn btn-sm bg-teal">
-                    <i class="fas fa-comments"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-primary">
-                    <i class="fas fa-user"></i> View Profile
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-            <div class="card bg-light d-flex flex-fill">
-              <div class="card-header text-muted border-bottom-0">
-                Digital Strategist
-              </div>
-              <div class="card-body pt-0">
-                <div class="row">
-                  <div class="col-7">
-                    <h2 class="lead"><b>Nicole Pearson</b></h2>
-                    <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
-                    <ul class="ml-4 mb-0 fa-ul text-muted">
-                      <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
-                      <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
-                    </ul>
-                  </div>
-                  <div class="col-5 text-center">
-                    <img src="../../dist/img/user2-160x160.jpg" alt="user-avatar" class="img-circle img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer">
-                <div class="text-right">
-                  <a href="#" class="btn btn-sm bg-teal">
-                    <i class="fas fa-comments"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-primary">
-                    <i class="fas fa-user"></i> View Profile
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
-            <div class="card bg-light d-flex flex-fill">
-              <div class="card-header text-muted border-bottom-0">
-                Digital Strategist
-              </div>
-              <div class="card-body pt-0">
-                <div class="row">
-                  <div class="col-7">
-                    <h2 class="lead"><b>
-                  
-                    </b></h2>
-                    <p class="text-muted text-sm"><b>About: </b> Web Designer / UX / Graphic Artist / Coffee Lover </p>
-                    <ul class="ml-4 mb-0 fa-ul text-muted">
-                      <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Address: Demo Street 123, Demo City 04312, NJ</li>
-                      <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone #: + 800 - 12 12 23 52</li>
-                    </ul>
-                  </div>
-                  <div class="col-5 text-center">
-                    <img src="../../dist/img/user1-128x128.jpg" alt="user-avatar" class="img-circle img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer">
-                <div class="text-right">
 
- 
-                  <label>Hobby:</label>
-                  <select id="hobby" name="hobby[]" multiple>
-                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                    <?php
 
-                    <option selected="selected">orange</option>
-                    <option>white</option>
-                  </optgroup>
-                  <optgroup label="Alaskan/Hawaiian Time Zone">
+                      // Ezzel hozom létre a rövid szöveget.
+      function create_shortText($formattedSt)
+      {
+        if (strlen($formattedSt) < 150) {
+          return ('<p class="card-text mb-auto">' . $formattedSt . "</p>");
+        } else {
+          for ($i = 0; $i < 150; $i++) {
+            if ($i == 149) {
+              if ($formattedSt[$i] == ' ') {
+                return ('<p class="card-text mb-auto">' . substr($formattedSt, 0, 149) . "... </p>");
+              } else {
+                for ($k = 150; $k > 0; $k--) {
+                  if ($formattedSt[$k] == ' ') {
+                    return ('<p class="card-text mb-auto">' . substr($formattedSt, 0, $k) . "... </p>");
+                    break;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
 
-                    <option selected="selected">purple</option>
-                  </optgroup>
-                  </select>
-            
-                  <a href="#" class="btn btn-sm bg-teal">
-                    <i class="fas fa-comments"></i>
-                  </a>
-                  <a href="#" class="btn btn-sm btn-primary">
-                    <i class="fas fa-user"></i> View Profile
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+
+      //A férőhelyek megtekintése, elérhető-e a jelentkezés.
+
+      function how_much_space($max_members, $event_id)
+      {
+
+        $count_joined_ppl = DB::table("event_joined")->where("event_id", $event_id)->count();
+        
+        if($count_joined_ppl == $max_members){
+          return 0;
+        }else{
+          return 1;
+        }
+        
+  
+
+      }
+          $events = DB::table('event_main')->get();
+          foreach ($events as $event) {
+        if(how_much_space($event->max_members, $event->id)<1 && strcmp(Auth::user()->name,$event->owner) != 0 ){
           
+          echo('
           
-       
+          <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+            <div class="card bg-light d-flex flex-fill">
+              <div class="card-header text-muted border-bottom-0">
+               '.$event->owner.'
+              </div>
+              <div class="card-body pt-0">
+                <div class="row">
+                  <div class="col-12">
+                    <h2 class="lead"><b>'.$event->name.'</b></h2>
+                    <p class="text-muted text-sm"><b>Az eseményről: </b> '.create_shortText(strip_tags($event->description)).'</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer">
+                <div class="text-justify text-muted border-bottom-0">
+               Sajnos erre az eseményre nincs lehetőséged jelentkezni mivel elfogytak a férőhelyek.
+              </div>
+              </div>
+           
+              </div>
+          </div>
+
+          
+          ');
+        }else{
+          
+            $ifOwnPost = "";
+
+                    if(strcmp(Auth::user()->name,$event->owner) == 0){
+                      $ifOwnPost='
+                    
+                    <a href="'. url("/event/delete/" . $event->id) . '" class="btn btn-sm btn-danger">
+                   Törlés
+                  </a> 
+                  <a href="'.url("/event/modify/".$event->id).'" class="btn btn-sm btn-primary">
+                   Módosítás
+                  </a>
+                
+                    ';
+                    }else{
+                      $ifOwnPost='
+                    
+                    <a href="'. url("/event/" . $event->id) . '" class="btn btn-sm btn-primary">
+                     Tovább
+                  </a>
+                    ';
+                    }
+          
+          echo('
+          
+          <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
+            <div class="card bg-light d-flex flex-fill">
+              <div class="card-header text-muted border-bottom-0">
+               '.$event->owner.'
+              </div>
+              <div class="card-body pt-0">
+                <div class="row">
+                  <div class="col-12">
+                    <h2 class="lead"><b>'.$event->name.'</b></h2>
+                    <p class="text-muted text-sm"><b>Az eseményről: </b> '.create_shortText(strip_tags($event->description)).'</p>
+                   
+                  </div>
+                </div>
+              </div>
+              <div class="card-header text-muted border-bottom-0">
+               Elérhető létszám: '.$event->max_members.'
+              </div>
+              <div class="card-footer">
+                <div class="text-right">
+                 '.$ifOwnPost.'
+                </div>
+              </div>
+           
+              </div>
+          </div>
+
+          
+          ');
+          }
+          
+        }
+          ?>
 
 
-        <script>
-          $('#hobby').select2({
-              width: '100%',
-              placeholder: "Select an Option",
-              allowClear: true,
-          });
-      </script>
-        </div>
+                    <!-- /.card-body -->
 
+                </div>
+                <!-- /.card -->
 
-      </div>
-      <!-- /.card-body -->
-
-    </div>
-    <!-- /.card -->
-
-  </section>
-  <!-- /.content -->
-<!-- /.content-wrapper -->
+    </section>
+    <!-- /.content -->
+    <!-- /.content-wrapper -->
 
 @endsection
