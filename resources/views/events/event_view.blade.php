@@ -31,16 +31,14 @@
                     
                     $user_checkedin = DB::table('event_joined')
                         ->where('event_id', Request::route('id'))
-                        ->value('user_id');
+                        ->where('user_id', Auth::user()->id)
+                        ->get();
                     
-                    if (Auth::user()->id != $user_checkedin || $user_checkedin == null) {
-                        echo('
-                             <button type="submit" class="w-30 btn btn-lg btn-outline-primary">Jelentkezés</button> 
-                            ');
-                    } else {
-                       
-                    }
-                    
+                    if ($user_checkedin == '[]') {
+                        echo '
+                                                                                         <button type="submit" class="w-30 btn btn-lg btn-outline-primary">Jelentkezés</button> 
+                                                                                        ';
+                    } 
                     ?>
 
                 </div>

@@ -10,14 +10,17 @@
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>150</h3>
+                  <h3><?php $count_event = DB::table("event_joined")->get()->count();
+                  
+                    echo($count_event);
+                  ?></h3>
   
-                  <p>New Orders</p>
+                  <p>Esemény összesen</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="/events" class="small-box-footer">Tovább <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->

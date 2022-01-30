@@ -111,7 +111,7 @@
                   </a>
                     ';
                     }
-          
+                    $count_joined_ppl = DB::table("event_joined")->where("event_id", $event->id)->count();
           echo('
           
           <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch flex-column">
@@ -129,7 +129,7 @@
                 </div>
               </div>
               <div class="card-header text-muted border-bottom-0">
-               Elérhető létszám: '.$event->max_members.'
+               Elérhető létszám: '.($event->max_members)-($count_joined_ppl).'
               </div>
               <div class="card-footer">
                 <div class="text-right">
