@@ -41,6 +41,21 @@ class event_manager extends Controller
 
         return redirect("/events")->with('status', "Sikeresen törölted a(z) eseményt");
     }
+    public function demit(Request $request)
+    {
+       
+        $event = $request->input('event_id');
+        $user = $request->input('event_user');
+        $joinedId = DB::table('event_joined')
+                ->where('event_id', $event)
+                ->where('user_id', $user)
+                ->value("eId");
+
+          
+      DB::table('event_joined')->where('eId', $joinedId)->delete();
+
+        return redirect("/home")->with('status', "Sikeresen lemondtad a(z) eseményt");
+    }
     public function modify(Request $request)
     {
         $event_id = $request->input('event_id');

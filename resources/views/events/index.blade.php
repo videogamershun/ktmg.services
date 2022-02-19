@@ -89,28 +89,14 @@
           
           ');
         }else{
-          
-            $ifOwnPost = "";
-
-                    if(strcmp(Auth::user()->name,$event->owner) == 0){
-                      $ifOwnPost='
-                    
-                    <a href="'. url("/event/delete/" . $event->id) . '" class="btn btn-sm btn-danger">
-                   Törlés
-                  </a> 
-                  <a href="'.url("/event/modify/".$event->id).'" class="btn btn-sm btn-primary">
-                   Módosítás
-                  </a>
-                
-                    ';
-                    }else{
+         
                       $ifOwnPost='
                     
                     <a href="'. url("/event/" . $event->id) . '" class="btn btn-sm btn-primary">
                      Tovább
                   </a>
                     ';
-                    }
+                    
                     $count_joined_ppl = DB::table("event_joined")->where("event_id", $event->id)->count();
           echo('
           

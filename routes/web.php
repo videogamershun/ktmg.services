@@ -69,20 +69,30 @@ if (dbConnect()) {
     });
 
     Route::get('/event_create', function () {
-        return view('events.event_create');
+        return view('events.admin.event_create');
     });
 
     Route::get('/event/delete/{id}', function () {
-        return view("events.confirm_delete");
+        return view("events.admin.confirm_delete");
     });
 
     Route::get('/event/modify/{id}', function () {
-        return view("events.event_modify");
+        return view("events.admin.event_modify");
     });
 
     Route::get('/event/{id}', function () {
-        return view("events.event_view");
+        return view("events.admin.event_view");
     });
+    Route::get('/own', function () {
+        return view("events.user.own_event");
+    });
+    Route::get('/admin_own', function () {
+        return view("events.admin.own_event");
+    });
+    Route::get('/demit/{id}', function () {
+        return view("events.user.demit");
+    });
+    
     
 
     /**
@@ -117,7 +127,7 @@ if (dbConnect()) {
     Route::post('export_event', 'App\Http\Controllers\event_manager@insert');
     Route::post('delete_event', 'App\Http\Controllers\event_manager@delete');
     Route::post('modify_event', 'App\Http\Controllers\event_manager@modify');
-
+    Route::post('demit_event', 'App\Http\Controllers\event_manager@demit');
     //Route::post('delete_group', 'App\Http\Controllers\group_manage@delete_group');
 
     Route::get('/test', [App\Http\Controllers\PermissionTester::class, 'show']);

@@ -1,6 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+    <?php
+    
+    function check_event_exist()
+    {
+        $events = DB::table('event_main')
+            ->where('id', Request::route('id'))
+            ->value('id');
+        
+            
+            if ($events =="") {
+          
+            header("Location: /home");
+            die();
+        } else {
+              //do nothing;
+        }
+      
+    }
+    check_event_exist();
+    ?>
     <br />
     <div class="container">
         <div class="row justify-content-center">
@@ -36,9 +56,9 @@
                     
                     if ($user_checkedin == '[]') {
                         echo '
-                                                                                         <button type="submit" class="w-30 btn btn-lg btn-outline-primary">Jelentkezés</button> 
-                                                                                        ';
-                    } 
+                                                                                                                                 <button type="submit" class="w-30 btn btn-lg btn-outline-primary">Jelentkezés</button> 
+                                                                                                                                ';
+                    }
                     ?>
 
                 </div>
