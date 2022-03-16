@@ -73,8 +73,66 @@
         </li>
     </ul>
 </li>
+<li class="nav-item">
+    <a href="#" class="nav-link">
+      
+        <i class="nav-icon fas fa-users"></i>
+        <p>
+            Felhasználók
+            <i class="right fas fa-angle-left"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="/event_create" class="nav-link"> 
+                <i class="nav-icon fas fa-user-plus"></i>
+                
+                <p>
+                    Hozzáadás
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin_own" class="nav-link">
 
+                <i class="nav-icon fas fa-user-edit"></i>
+                <p>
+                    Kezelés
+                </p>
+            </a>
+        </li>
+    </ul>
+</li>
 
+<li class="nav-item">
+    <a href="#" class="nav-link">
+      
+        <i class="nav-icon fas fa-project-diagram"></i>
+        <p>
+            Jogosultság
+            <i class="right fas fa-angle-left"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview">
+        <li class="nav-item">
+            <a href="/role/create" class="nav-link"> 
+                <i class="nav-icon fas fa-plus"></i>
+                <p>
+                    Hozzáadás
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="/admin_own" class="nav-link">
+
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                    Kezelés
+                </p>
+            </a>
+        </li>
+    </ul>
+</li>
 
 <li class="nav-item">
     <a href="/blog" class="nav-link">

@@ -68,32 +68,43 @@ if (dbConnect()) {
         return view('events.index');
     });
 
-    Route::get('/event_create', function () {
-        return view('events.admin.event_create');
-    });
-
-    Route::get('/event/delete/{id}', function () {
-        return view("events.admin.confirm_delete");
-    });
-
-    Route::get('/event/modify/{id}', function () {
-        return view("events.admin.event_modify");
-    });
-
-    Route::get('/event/{id}', function () {
-        return view("events.admin.event_view");
-    });
-    Route::get('/own', function () {
-        return view("events.user.own_event");
-    });
-    Route::get('/admin_own', function () {
-        return view("events.admin.own_event");
-    });
     Route::get('/demit/{id}', function () {
         return view("events.user.demit");
     });
+    Route::get('/event/{id}', function () {
+        return view("events.user.event_view");
+    });
+    
+    /* Admin részleg */
+    Route::get('/event_create', function () {
+        return view('admin.event.event_create');
+    });
+
+    Route::get('/event/delete/{id}', function () {
+        return view("admin.event.confirm_delete");
+    });
+
+    Route::get('/event/modify/{id}', function () {
+        return view("admin.event.event_modify");
+    });
+   
+    Route::get('/event/request/{id}', function () {
+        return view("admin.event.request_people");
+    });
+
+    Route::get('/admin_own', function () {
+        return view("admin.event.index");
+    });
     
     
+    /**
+     * 
+     *    Role, permission manager.
+     * 
+     */
+    Route::get('/role/create', function () {
+        return view("admin.permission.create_role");
+    });
 
     /**
      * 

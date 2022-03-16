@@ -82,8 +82,13 @@
                                                         </div>
                                                       </div>
                                                       <div class="card-footer">
+                                    
                                                         <div class="text-right">
-                                                        
+                                                            <a href="' .
+                                url('/event/request/' . $event->id) .
+                                '" class="btn btn-sm btn-success">
+                                                             Lekérdezés
+                                                          </a>
                                                           <a href="' .
                                 url('/event/modify/' . $event->id) .
                                 '" class="btn btn-sm btn-primary">
