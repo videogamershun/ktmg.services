@@ -6,6 +6,22 @@
             swal("Siker!", "{{ session('status') }}!", "success");
         </script>
     @endif
+
+    <?php
+    
+    function userHasPermission()
+    {
+        if (Auth::user()->hasPermissionTo('users.index')) {
+        } else {
+            header('Location: /home');
+            die();
+        }
+    }
+    
+    userHasPermission();
+    
+    ?>
+
     <br />
     <!-- Main content -->
     <section class="content">

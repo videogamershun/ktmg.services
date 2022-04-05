@@ -19,6 +19,15 @@
           <script src="{{ asset("js/ckeditor.js") }}"></script>
           <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+
+
+          <link rel="stylesheet" href="{{ asset("plugins/fontawesome-free/css/all.min.css") }}">
+
+          <link rel="stylesheet" href="{{ asset("plugins/datatables-bs4/css/dataTables.bootstrap4.min.css") }}">
+          <link rel="stylesheet" href="{{ asset("plugins/datatables-responsive/css/responsive.bootstrap4.min.css") }}">
+          <link rel="stylesheet" href="{{ asset("plugins/datatables-buttons/css/buttons.bootstrap4.min.css") }}">
+          
+          <link rel="stylesheet" href="{{ asset("dist/css/adminlte.min.css?v=3.2.0") }}">
           
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 

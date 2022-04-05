@@ -1,6 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+
+<?php 
+
+function userHasPermission()
+    {
+        if (Auth::user()->hasPermissionTo('admin.event.admin')) {
+        } else {
+            header('Location: /home');
+            die();
+        }
+    }
+
+    userHasPermission();
+
+?>
     @if (session('status'))
         <script>
             swal("Siker!", "{{ session('status') }}!", "success");

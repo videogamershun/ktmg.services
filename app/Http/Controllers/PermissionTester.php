@@ -3,15 +3,31 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Http\Requests;
+use App\Htpp\Controllers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class PermissionTester extends Controller
 {
-    public function show()
+    public function create_permission()
     {
-        Permission::create(['name' => 'dok admin']);
+        
+      echo("Sikerült");
+    }
+    public function create_role()
+    {
+        Role::create(['name' => 'Admin']);
         echo("Sikerült");
     }
+    public function give_role()
+    {
 
+        Auth::user()->removeRole('Tanár');
+        Auth::user()->assignRole('Admin');
+        echo("Sikerült");
+    }
 }

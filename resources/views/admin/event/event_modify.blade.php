@@ -33,6 +33,17 @@
         }
       
     }
+
+    function userHasPermission()
+    {
+        if (Auth::user()->hasPermissionTo('admin.event.modify')) {
+        } else {
+            header('Location: /home');
+            die();
+        }
+    }
+
+    userHasPermission();
     check_event_exist();
     check_event_owner();
     ?>

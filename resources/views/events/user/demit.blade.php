@@ -1,6 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+    <?php
+    
+    function userHasPermission()
+    {
+        if (Auth::user()->hasPermissionTo('users.events.user.demit')) {
+        } else {
+            header('Location: /home');
+            die();
+        }
+    }
+    
+    userHasPermission();
+    
+    ?>
+
     <br />
 
     <section class="content">
@@ -20,10 +35,10 @@
 
                             <div class="card-body">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="event_user" value="{{ Auth::user()->id; }}"
-                                hidden>
-                                <input type="text" class="form-control" name="event_id" value="{{Request::route('id'); }}"
-                                hidden>
+                                    <input type="text" class="form-control" name="event_user"
+                                        value="{{ Auth::user()->id }}" hidden>
+                                    <input type="text" class="form-control" name="event_id"
+                                        value="{{ Request::route('id') }}" hidden>
                                     <label>Esemény - időpont</label>
                                     <input class="form-control" style="text-align:center;" type="text" name="event"
                                         value="<?php
@@ -36,7 +51,8 @@
                                 <div class="form-group">
                                     <label>Esemény - megnevezése</label>
                                     <input class="form-control" type="text" style="text-align:center;" name="owner"
-                                        value="{{ DB::table("event_main")->where("id", Request::route('id'))->value("name"); }}" disabled>
+                                        value="{{ DB::table('event_main')->where('id', Request::route('id'))->value('name') }}"
+                                        disabled>
 
                                 </div>
                             </div>
@@ -66,6 +82,4 @@
 
 
     </section>
-
-
 @endsection

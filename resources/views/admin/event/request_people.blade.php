@@ -29,8 +29,20 @@
             die();
         }
     }
+
+
+    function userHasPermission()
+    {
+        if (Auth::user()->hasPermissionTo('event.request_people')) {
+        } else {
+            header('Location: /home');
+            die();
+        }
+    }
+
     check_event_exist();
     check_event_owner();
+    userHasPermission();
     ?>
     <br />
     <div class="container">
@@ -38,7 +50,7 @@
             <div class="col-md-8">
                 <div class="card">
 
-                    <form action="{{ url('check-in') }}" method="post">
+                    <form>
                         @csrf
                         <div class="card-body">
                             <input type="text" class="form-control" name="event_id" value="{{ Request::route('id') }}"

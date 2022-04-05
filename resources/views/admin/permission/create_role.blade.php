@@ -1,104 +1,104 @@
 @extends('layouts.app')
 
 @section('content')
-<br/>
-  
-  <section class="content">
+@if (session('status'))
+<script>
+    swal("Siker!", "{{ session('status') }}!", "success");
+</script>
+@endif
+    <br />
+    <?php
+    
+    function userHasPermission()
+    {
+        if (Auth::user()->hasPermissionTo('admin.create_role')) {
+        } else {
+            header('Location: /home');
+            die();
+        }
+    }
 
-    <div class="card card-solid ">
-      <div class="card-body pb-0 ">
+  //  userHasPermission();
 
-          <div class="d-flex align-items-stretch flex-column">
-                <div class="card card-primary">
-                    <div class="card-header">
-                      <h3 class="card-title">Jogosultság - létrehozás</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <!-- form start -->
-                    <form action="{{url('export_event')}}" method="post">
-                      @csrf
-           
-                      <div class="card-body">
-                        
-                          <div class="form-group">
-                            <label>Jogosultság - megnevezése</label>
-                            <input type="text" class="form-control" name="name"  placeholder="Pályaválasztási tanácsadás">
-                          </div>              
-                        <div class="form-group">
-                            <label>Mikor:</label>
-                              <div class="input-group date" id="reservationdate" data-target-input="nearest">
-                                  <input type="date" name="event_date" class="form-control datetimepicker-input">
-                              </div>
-                          </div>
-                          <div class="form-group">
-                            <label>Esemény - láthatóság</label>
-                            <select class="form-control select2" name="publicity" style="width: 100%;">
-                              <option selected="selected">Publikus</option>
-                              <option>DÖK</option>
-                            </select>
+    ?> 
+
+    <section class="content">
+
+        <div class="card card-solid ">
+            <div class="card-body pb-0 ">
+
+                <div class="d-flex align-items-stretch flex-column">
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Jogosultság - létrehozás</h3>
                         </div>
-                        <div class="form-group">
-                          <label>Maximum létszám</label>
-                          <input type="number" class="form-control" name="max_members" placeholder="Maximum létszám: 20">
-                        </div>    
-                        <div class="form-group">
-                                <label>Osztály:</label>
-                                <select id="selector" name="years[]" multiple>
-                                  <optgroup label="12. évfolyam">
-              
-                                  <option selected="selected">12.F</option>
-                                  <option>12.D</option>
-                                </optgroup>
-                                <optgroup label="11. évfolyam">
-              
-                                    <option>11.C</option>
-                                </optgroup>
-                                <optgroup label="10. évfolyam">
-              
-                                    <option>10.B</option>
-                                  </optgroup>
-                                  <optgroup label="9. évfolyam">
-              
-                                    <option>9.A</option>
-                                  </optgroup>
-                                </select>                              
-                          </div>     
-                          <div class="form-group">
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form action="{{ url('create_new_role') }}" method="post">
+                            @csrf
 
-                           <div class="centered">
-                                <div class="editor-container">
-                                  <textarea class="form-group" id="editor" name="content"></textarea>
+                            <div class="card-body">
+
+                                <div class="form-group">
+                                    <label>Csoport - megnevezése</label>
+                                    <input type="text" class="form-control" name="name"
+                                        placeholder="Diák">
+                                </div>
+                             
+                                <div class="form-group">
+                                  <label>Jogosultságok</label> <br/>
+                                    <?php
+                                    
+                                    $permissions = DB::table('permissions')->get();
+                                    
+                                    $permcount = 0;
+                                    foreach ($permissions as $permission) {
+
+                                      $permcount++;
+                                     
+                                    
+                                        echo('   
+                                        <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="check_list[]"
+                                                                                value="'.$permission->name.'">
+                                                  <label class="form-check-label" for="inlineCheckbox1">'.$permission->name.'</label>
+                                                </div>
+                                         ');
+                                         if($permcount==3){
+                                       
+                                            echo('<br/>');
+                                            $permcount=0;
+                                          }
+                                    }
+                                    
+                                    ?>
 
                                 </div>
+                  
+
+
                             </div>
-                          </div>
-  
+                            <!-- /.card-body -->
 
-                      </div>
-                      <!-- /.card-body -->
-      
-                      <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Létrehozás</button>
-                      </div>
-                    </form>
-                  </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Létrehozás</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </div>
-    
+
         </div>
-      </div>
- 
-   
- 
-  </section>
-  <script>
-    $('#selector').select2({
-        width: '100%',
-        placeholder: "Válassz osztályt",
-        allowClear: true,
-    });
-
-</script>
+        </div>
 
 
+
+    </section>
+    <script>
+        $('#selector').select2({
+            width: '100%',
+            placeholder: "Válassz osztályt",
+            allowClear: true,
+        });
+    </script>
 @endsection

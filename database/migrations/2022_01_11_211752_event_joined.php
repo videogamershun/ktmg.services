@@ -9,8 +9,9 @@ class EventJoined extends Migration
     public function up()
     {
         Schema::create('event_joined', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->integer('event_id');
+            $table->id();
+            $table->string('user_id');
+            $table->string('event_id');
         });
     }
 

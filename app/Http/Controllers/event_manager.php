@@ -20,14 +20,13 @@ class event_manager extends Controller
         $owner = $request->input('owner');
         $name = $request->input('name');
         $event_date = $request->input('event_date');
-        $publicity = $request->input('publicity');
         $max_members = $request->input('max_members');
         $yearsBeforecut =  json_encode($request->input('years'));
         $years =  substr($yearsBeforecut, 1, -1);
         $content = $request->input('content');
 
         $data = array("id" => $eventId, "name" => $name, "owner" => $owner, "description" => $content, "event_when" => $event_date
-        , "event_private" => $publicity, "max_members" => $max_members, "event_for" => $years);
+       , "max_members" => $max_members, "event_for" => $years);
 
         DB::table('event_main')->insert($data);
 
@@ -46,13 +45,10 @@ class event_manager extends Controller
        
         $event = $request->input('event_id');
         $user = $request->input('event_user');
-        $joinedId = DB::table('event_joined')
-                ->where('event_id', $event)
-                ->where('user_id', $user)
-                ->value("eId");
+      
 
           
-      DB::table('event_joined')->where('eId', $joinedId)->delete();
+      DB::table('event_joined')->where('event_id', $event)->where('user_id', $user)->delete();
 
         return redirect("/home")->with('status', "Sikeresen lemondtad a(z) eseményt");
     }

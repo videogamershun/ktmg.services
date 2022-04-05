@@ -33,8 +33,17 @@
         }
       
     }
+    function userHasPermission()
+    {
+        if (Auth::user()->hasPermissionTo('admin.event.delete')) {
+        } else {
+            header('Location: /home');
+            die();
+        }
+    }
     check_event_exist();
     check_event_owner();
+    userHasPermission();
     ?>
     <br />
 
@@ -62,7 +71,7 @@
                                 <div class="form-group">
                                     <label>Esemény - megnevezése</label>
                                     <input class="form-control" type="text" style="text-align:center;" name="owner"
-                                        value="{{ Auth::user()->name }}" disabled>
+                                        value="{{ DB::table("event_main")->where("id", Request::route('id'))->value("name") }}" disabled>
 
                                 </div>
                             </div>

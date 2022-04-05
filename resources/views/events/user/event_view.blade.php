@@ -8,18 +8,24 @@
         $events = DB::table('event_main')
             ->where('id', Request::route('id'))
             ->value('id');
-        
-            
-            if ($events =="") {
-          
-            header("Location: /home");
+    
+        if ($events == '') {
+            header('Location: /home');
             die();
         } else {
-              //do nothing;
+            //do nothing;
         }
-      
+    }
+    function userHasPermission()
+    {
+        if (Auth::user()->hasPermissionTo('users.event_view')) {
+        } else {
+            header('Location: /home');
+            die();
+        }
     }
     check_event_exist();
+    userHasPermission();
     ?>
     <br />
     <div class="container">
@@ -45,7 +51,7 @@
                     </form>
 
 
-                    <a class="w-30 btn btn-lg btn-outline-primary" href="{{ url('/events') }}">Vissza</a>
+                    <a class="w-30 btn btn-lg btn-outline-primary" href="{{ url('/home') }}">Vissza</a>
 
                     <?php
                     
@@ -56,8 +62,8 @@
                     
                     if ($user_checkedin == '[]') {
                         echo '
-                                                                                                                                 <button type="submit" class="w-30 btn btn-lg btn-outline-primary">Jelentkezés</button> 
-                                                                                                                                ';
+                                                                                                                                                     <button type="submit" class="w-30 btn btn-lg btn-outline-primary">Jelentkezés</button> 
+                                                                                                                                                    ';
                     }
                     ?>
 

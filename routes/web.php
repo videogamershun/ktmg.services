@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Redirect;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,18 +28,6 @@ Ellenőrzí a szükséges dolgoakt:
     - Főoldal url definicíó
 */
 
-
-function loggedIn()
-{
-    if (Auth::user()) {
-        return true;
-    } else {
-        return false;
-    }
-}
-function userHasRole()
-{
-}
 
 function dbConnect()
 {
@@ -68,13 +60,17 @@ if (dbConnect()) {
         return view('events.index');
     });
 
+
     Route::get('/demit/{id}', function () {
         return view("events.user.demit");
     });
     Route::get('/event/{id}', function () {
         return view("events.user.event_view");
     });
-    
+    Route::get('/own', function () {
+        return view("events.user.own_event");
+    });
+
     /* Admin részleg */
     Route::get('/event_create', function () {
         return view('admin.event.event_create');
@@ -87,7 +83,7 @@ if (dbConnect()) {
     Route::get('/event/modify/{id}', function () {
         return view("admin.event.event_modify");
     });
-   
+
     Route::get('/event/request/{id}', function () {
         return view("admin.event.request_people");
     });
@@ -95,8 +91,10 @@ if (dbConnect()) {
     Route::get('/admin_own', function () {
         return view("admin.event.index");
     });
-    
-    
+    Route::get('/modify_user', function () {
+        return view("admin.user.modify_user");
+    });
+
     /**
      * 
      *    Role, permission manager.
@@ -104,6 +102,29 @@ if (dbConnect()) {
      */
     Route::get('/role/create', function () {
         return view("admin.permission.create_role");
+    });
+
+    Route::get('/permissions/create', function () {
+
+        if (Auth::check()) {
+          /*  if (Auth::user()->hasPermissionTo('admin.create_permission')) {
+                return view("admin.permission.perm");
+            } else {
+                header("Location: /home");
+            }*/
+            return view("admin.permission.perm");
+        } else {
+            header("Location: /home");
+        }
+    });
+
+  /**
+     * 
+     *   User manager.
+     * 
+     */
+    Route::get('/user/create', function () {
+        return view("admin.user.index");
     });
 
     /**
@@ -125,7 +146,6 @@ if (dbConnect()) {
 
 
     Auth::routes();
-
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     /* 
@@ -139,8 +159,13 @@ if (dbConnect()) {
     Route::post('delete_event', 'App\Http\Controllers\event_manager@delete');
     Route::post('modify_event', 'App\Http\Controllers\event_manager@modify');
     Route::post('demit_event', 'App\Http\Controllers\event_manager@demit');
+
+
+    Route::post('create_new_role', 'App\Http\Controllers\CreateRole@insert');
+    Route::post('create_new_perm', 'App\Http\Controllers\PermissionCreator@insert');
+
     //Route::post('delete_group', 'App\Http\Controllers\group_manage@delete_group');
 
-    Route::get('/test', [App\Http\Controllers\PermissionTester::class, 'show']);
+    Route::get('/test', [App\Http\Controllers\PermissionTester::class, 'give_role']);
 } else {
 }
