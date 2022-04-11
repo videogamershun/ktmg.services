@@ -22,15 +22,14 @@
             ->where('id', Request::route('id'))
             ->value('owner');
     
-        if ($owner == Auth::user()->name) {
+        if ($owner == Auth::user()->id) {
             //do Nothing
         } else {
             header('Location: /home');
             die();
         }
     }
-
-
+    
     function userHasPermission()
     {
         if (Auth::user()->hasPermissionTo('event.request_people')) {
@@ -39,7 +38,7 @@
             die();
         }
     }
-
+    
     check_event_exist();
     check_event_owner();
     userHasPermission();
@@ -61,9 +60,54 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="groupName">Jelentkezések</label>
+                            
+                                <div class="form-group" style="text-align:center;">
+
+                                    <section class="content">
+                                        <div class="container-fluid">
+                                            <!-- Small boxes (Stat box) -->
+                                            <div class="row">
+                                                <div class="col-lg-3 col-6">
+                                                    <!-- small box -->
+                                                    <div class="small-box bg-info">
+                                                        <div class="inner">
+                                                            <h3><?php $count_event = DB::table('event_main')
+                                                                ->where("id",Request::route('id'))
+                                                                ->value("max_members");
+                                                            
+                                                            echo $count_event;
+                                                            ?></h3>
+                                
+                                                            <p>férőhely</p>
+                                                        </div>
+                                                      </div>
+                                                </div>
+                                                <div class="col-lg-3 col-6">
+                                                    <!-- small box -->
+                                                    <div class="small-box bg-success">
+                                                        <div class="inner">
+                                                            <h3><?php $count_event = DB::table('event_joined')
+                                                                ->where("event_id",Request::route('id') )
+                                                                ->get()
+                                                                ->count();
+                                                            
+                                                            echo $count_event;
+                                                            ?></h3>
+                                
+                                                            <p>jelentkezés</p>
+                                                        </div>
+                                                         </div>
+                                                </div>
+                                                
+                                              
+                                            </div>
+                                            <!-- /.row -->
+                                
+                                    </section>
+                                </div>
                                 <table class="table">
                                     <thead>
+
                                         <tr>
                                             <th scope="col">#</th>
                                             <th scope="col">Név</th>
@@ -72,6 +116,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+
                                         <?php
                                         
                                         $data = DB::table('event_joined')
@@ -85,13 +130,21 @@
                                                 ->get();
                                         
                                             foreach ($ppl as $ppl_one) {
-                                                echo('        
-                                            <tr>
-                                              <th scope="row">'.$count.'</th>
-                                              <td>'.$ppl_one->name.'</td>
-                                              <td>'.$ppl_one->year.'</td>
-                                              <td>'.$ppl_one->email.'</td>
-                                            </tr>');
+                                                echo '        
+                                                                                    <tr>
+                                                                                      <th scope="row">' .
+                                                    $count .
+                                                    '</th>
+                                                                                      <td>' .
+                                                    $ppl_one->name .
+                                                    '</td>
+                                                                                      <td>' .
+                                                    $ppl_one->year .
+                                                    '</td>
+                                                                                      <td>' .
+                                                    $ppl_one->email .
+                                                    '</td>
+                                                                                    </tr>';
                                             }
                                         }
                                         ?>
@@ -105,7 +158,7 @@
 
                     <a class="w-30 btn btn-lg btn-outline-primary" href="{{ url('/admin_own') }}">Vissza</a>
 
-                 
+
                 </div>
             </div>
         </div>

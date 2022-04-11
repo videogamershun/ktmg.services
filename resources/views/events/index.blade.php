@@ -88,7 +88,7 @@
                                 return 1;
                             } else {
 
-                                return 0;
+                                return ;
                             }
   
                       }  
@@ -98,9 +98,21 @@
                     
                     $events = DB::table('event_main')->get();
                     foreach ($events as $event) {
-                        if (check_year($event->event_for) == 0) {
+
+
+                        $eventTime = $event->event_when;
+                         $when = date('Y-m-d', strtotime($eventTime));
+                           $toDay = date('Y-m-d');
+                                                                                
+                            if($toDay>$when){
+                                 //doNothing
+                             }else{
+                             
+                        
+                        $userName = DB::table("users")->where("id", $event->owner)->value("name");
+                        if (check_year($event->event_for) == 0 || Auth::user()->id == $event->owner) {
                         } else {
-                            if (how_much_space($event->max_members, $event->id) < 1 && strcmp(Auth::user()->name, $event->owner) != 0) {
+                            if (how_much_space($event->max_members, $event->id) < 1) {
                                 $countable += 1;
                                 echo '
                                                   
@@ -108,7 +120,7 @@
                                                     <div class="card bg-light d-flex flex-fill">
                                                       <div class="card-header text-muted border-bottom-0">
                                                        ' .
-                                    $event->owner .
+                                    $userName .
                                     '
                                                       </div>
                                                       <div class="card-body pt-0">
@@ -156,7 +168,7 @@
                                                     <div class="card bg-light d-flex flex-fill">
                                                       <div class="card-header text-muted border-bottom-0">
                                                        ' .
-                                    $event->owner .
+                                    $userName.
                                     '
                                                       </div>
                                                       <div class="card-body pt-0">
@@ -190,6 +202,7 @@
                                                   
                                                   ';
                             }
+                        }
                         }
                     }
                     

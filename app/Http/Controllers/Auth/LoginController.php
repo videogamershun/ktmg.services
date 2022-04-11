@@ -19,6 +19,9 @@ class LoginController extends Controller
     |
     */
 
+    protected $maxAttempts = 5; // Default is 5
+    protected $decayMinutes = 1440; // Default is 1
+
     use AuthenticatesUsers;
 
     /**

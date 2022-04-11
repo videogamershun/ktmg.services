@@ -50,14 +50,14 @@
             <div class="col-md-10">
                 <div class="card">
 
-                    <form>
+                    <form action="{{ url('modify_user_role') }}" method="post">
                         @csrf
                         <div class="card-body">
                             <div class="form-group" style="text-align:center;">
                                 <h2>{{ DB::table('event_main')->where('id', Request::route('id'))->value('name') }}</h2>
                             </div>
 
-
+  
                             <div class="form-group">
                                 <label for="groupName">Felhasználók</label>
                                 <table class="table" id="myTable">
@@ -70,7 +70,7 @@
                                             <th scope="col">
                                                
                                              </th>
-                                            <th scope="col"><input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+                                            <th scope="col"><input type="text" id="myInput" class="form-control" onkeyup="myFunction()" placeholder="Keresés..">
                                             </th>
                                         </tr>
                                     </thead>
@@ -83,26 +83,38 @@
 
                                     $users = DB::table('users')->get();
 
+                                    $count = 0;
                                             foreach ($users as $user) {
-                                
+                                                
+                                                $count++;
                                         $roleId = DB::table('model_has_roles')->where("model_id", $user->id)->value('role_id');
                                         $roleName = DB::table('roles')->where("id", $roleId)->value('name');
+                                        $allRole = DB::table('roles')->get();
 
-                                      
+                               
 
                                                 echo(' <tr>
-                                            <th scope="row">'.$user->id.'</th>
+                                            <th scope="row">'.$count.'<input type="text" class="form-control" name="user_id" value="'.$user->id.'"
+                                hidden></th>
                                             <td>'.$user->name.'</td>
                                             <td>'.$user->year.'</td>
                                             <td>'.$user->email.'</td>
                                             <td>
-                                                <button type="button" class="btn btn-danger">Törlés</button>
+                                                <a href="/delete/user/'.$user->id.'" type="button" class="btn btn-danger">Törlés</a>
                                             </td>
                                             <td>
-                                                <select class="custom-select form-control-border" aria-label="Default select example">
-                                                    
-                                            <option>'.$roleName.'</option>
+                                                <select class="custom-select form-control-border" aria-label="Jogkör" name="role">
+                                                    "<option selected="selected">'.$roleName.'</option>"
+                                                    ');
 
+                                                    foreach ($allRole as $role) {
+                                                        if($role->name !=$roleName){
+                                                            echo("<option>".$role->name."</option>");
+                                                        }
+                                                    }
+
+                                           
+                                                echo('
                                                 </select>
 
                                             </td>
@@ -126,7 +138,9 @@
 
 
                     <a class="w-30 btn btn-lg btn-outline-primary" href="{{ url('/home') }}">Vissza</a>
-                    <a class="w-30 btn btn-lg btn-outline-primary" href="#test">Mentés</a>
+                    
+                    <button type="submit" class="w-30 btn btn-lg btn btn-primary">Mentés</button>
+
 
                 </div>
             </div>

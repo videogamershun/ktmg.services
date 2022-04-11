@@ -25,7 +25,7 @@
             ->where('id', Request::route('id'))
             ->value('owner');
         
-            if ($owner == Auth::user()->name) {
+            if ($owner == Auth::user()->id) {
           //do Nothing
         } else {
             header("Location: /home");

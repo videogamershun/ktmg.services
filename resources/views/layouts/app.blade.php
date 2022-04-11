@@ -49,31 +49,20 @@
 
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown user-menu">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                  
-                    <span class="d-none d-md-inline">{{ Auth::user()->name }}</span>
-                </a>
-                <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <!-- User image -->
-                    <li class="user-header bg-primary">
-                       
-                        <p>
-                            {{ Auth::user()->name }}
-                            <small>Member since {{ Auth::user()->created_at->format('M. Y') }}</small>
-                        </p>
-                    </li>
+               
+               
                     <!-- Menu Footer-->
-                    <li class="user-footer">
-                        <a href="#" class="btn btn-default btn-flat">Profile</a>
-                        <a href="#" class="btn btn-default btn-flat float-right"
+                   
+                      
+                        <a href="#" class="btn btn-primary btn-flat float-right"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Sign out
+                           Kijelentkezés
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-                    </li>
-                </ul>
+                   
+              
             </li>
         </ul>
     </nav>
@@ -91,9 +80,9 @@
     <!-- Main Footer -->
     <footer class="main-footer">
         <div class="float-right d-none d-sm-block">
-            <b>Version</b> X
+            <b>Verzíó:</b> 1.0
         </div>
-        <strong>Copyright &copy; 2014-2020 </strong>
+        <strong>E-KTMG </strong>
     </footer>
 </div>
 

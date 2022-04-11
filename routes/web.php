@@ -48,7 +48,7 @@ function dbConnect()
 if (dbConnect()) {
 
     Route::get('/', function () {
-        return view('welcome');
+        return view('auth.login');
     });
 
     /**
@@ -57,42 +57,128 @@ if (dbConnect()) {
      */
 
     Route::get('/events', function () {
-        return view('events.index');
+
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('users.index')) {
+                return view('events.index');
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
 
 
     Route::get('/demit/{id}', function () {
-        return view("events.user.demit");
+
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('users.events.user.demit')) {
+                return view("events.user.demit");
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
     Route::get('/event/{id}', function () {
-        return view("events.user.event_view");
+
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('users.event_view')) {
+                return view("events.user.event_view");
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
     Route::get('/own', function () {
-        return view("events.user.own_event");
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('users.own_event')) {
+                return view("events.user.own_event");
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
 
     /* Admin részleg */
     Route::get('/event_create', function () {
-        return view('admin.event.event_create');
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('admin.event.create')) {
+                return view('admin.event.event_create');
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
 
     Route::get('/event/delete/{id}', function () {
-        return view("admin.event.confirm_delete");
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('admin.event.delete')) {
+                return view("admin.event.confirm_delete");
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
 
     Route::get('/event/modify/{id}', function () {
-        return view("admin.event.event_modify");
+
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('admin.event.modify')) {
+                return view("admin.event.event_modify");
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
 
     Route::get('/event/request/{id}', function () {
-        return view("admin.event.request_people");
+
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('event.request_people')) {
+                return view("admin.event.request_people");
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
 
     Route::get('/admin_own', function () {
-        return view("admin.event.index");
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('admin.event.admin')) {
+                return view("admin.event.index");
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
     Route::get('/modify_user', function () {
-        return view("admin.user.modify_user");
+
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('admin.modify_user')) {
+                return view("admin.user.modify_user");
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
 
     /**
@@ -101,24 +187,31 @@ if (dbConnect()) {
      * 
      */
     Route::get('/role/create', function () {
-        return view("admin.permission.create_role");
+        if (Auth::check()) {
+            if (Auth::user()->hasPermissionTo('admin.create_role')) {
+                return view("admin.permission.create_role");
+            } else {
+                return redirect()->to('/home')->send();
+            }
+        } else {
+            return redirect()->to('/')->send();
+        }
     });
 
     Route::get('/permissions/create', function () {
 
         if (Auth::check()) {
-          /*  if (Auth::user()->hasPermissionTo('admin.create_permission')) {
+            if (Auth::user()->hasPermissionTo('admin.create_permission')) {
                 return view("admin.permission.perm");
             } else {
-                header("Location: /home");
-            }*/
-            return view("admin.permission.perm");
+                return redirect()->to('/home')->send();
+            }
         } else {
-            header("Location: /home");
+            return redirect()->to('/')->send();
         }
     });
 
-  /**
+    /**
      * 
      *   User manager.
      * 
@@ -126,6 +219,14 @@ if (dbConnect()) {
     Route::get('/user/create', function () {
         return view("admin.user.index");
     });
+    Route::get('/delete/user/{id}', function () {
+        return view("admin.user.delete_people");
+    });
+    Route::get('/testet', function () {
+        return view("admin.core.test");
+    });
+
+    Route::post('file_upload', 'App\Http\Controllers\fileUpload@fileUploadPost');
 
     /**
      * 
@@ -145,7 +246,7 @@ if (dbConnect()) {
     */
 
 
-    Auth::routes();
+
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     /* 
@@ -153,6 +254,12 @@ if (dbConnect()) {
     Esemény kezelése
     
     */
+    Auth::routes([
+        'register' => false, // Registration Routes...
+        'reset' => false, // Password Reset Routes...
+        'verify' => false, // Email Verification Routes...
+    ]);
+
     Route::post('check-in', 'App\Http\Controllers\event_manager@check_in');
 
     Route::post('export_event', 'App\Http\Controllers\event_manager@insert');
@@ -163,9 +270,15 @@ if (dbConnect()) {
 
     Route::post('create_new_role', 'App\Http\Controllers\CreateRole@insert');
     Route::post('create_new_perm', 'App\Http\Controllers\PermissionCreator@insert');
+    Route::post('create_users', 'App\Http\Controllers\user_manager@addUser');
+
+    Route::post('delete_user', 'App\Http\Controllers\user_manager@deleteUser');
+    Route::post('modify_user_role', 'App\Http\Controllers\user_manager@updateUserRole');
+
+
 
     //Route::post('delete_group', 'App\Http\Controllers\group_manage@delete_group');
 
-    Route::get('/test', [App\Http\Controllers\PermissionTester::class, 'give_role']);
+    Route::get('/test', [App\Http\Controllers\PermissionTester::class, 'throttleKey']);
 } else {
 }

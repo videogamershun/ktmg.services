@@ -1,0 +1,608 @@
+﻿Osztály;Név
+9.A;Andrásofszky Zsófia Éva
+9.A;Biró Simon Buda
+9.A;Cseplits Viktória
+9.A;Csontos Réka Alexandra
+9.A;Fajcsi Kincső
+9.A;Gelencsér Janka Petra
+9.A;Gulyás Vivien
+9.A;Hegedüs Bálint
+9.A;Hegedüs Barna
+9.A;Keller Krisztián József
+9.A;Kimmel Liliána
+9.A;Kiss Adorján Timon
+9.A;Ligeti Blanka
+9.A;Lukács Zselyke
+9.A;Mándli Gellért
+9.A;Marlen Denissza
+9.A;Meggyesi Lívia
+9.A;Merse Zsófia
+9.A;Muniza Emily Nóra
+9.A;Müller Péter
+9.A;Müller Sarolta
+9.A;Pap Attila Bálint
+9.A;Puppi Barna
+9.A;Pusztai Péter
+9.A;Rőhrig Barna András
+9.A;Schádl Szilárd
+9.A;Sinka Marcell József
+9.A;Szombathelyi Péter
+9.A;Tilesch Júlia
+9.A;Varga Dániel
+9.A;Vörös Anna Bianka
+9.AJTP;Bálint Barnabás
+9.AJTP;Bogdán Ákos
+9.AJTP;Borosán Fanni
+9.AJTP;Brótya Gréta
+9.AJTP;Büki Marcell
+9.AJTP;Gazda Natália
+9.AJTP;Golub Emese
+9.AJTP;Gulyás Zoé
+9.AJTP;Herman Beatrix
+9.AJTP;Horváth Balázs
+9.AJTP;Horváth Levente Norbert
+9.AJTP;Kovács Bianka Alett
+9.AJTP;Kovács Vanessza Laura
+9.AJTP;Kovács Zsigmond
+9.AJTP;Lakatos Léna
+9.AJTP;Lukács Luca Erika
+9.AJTP;Nagy Viola
+9.AJTP;Orsós Zsanett
+9.AJTP;Pados Gabriella
+9.AJTP;Pálfi Eszter
+9.AJTP;Petrény Zsolt
+9.AJTP;Rajhona Henrietta
+9.AJTP;Simor Hanga
+9.AJTP;Szücs Patrik Albert
+9.AJTP;Vajda Milán
+9.B;Csapó Luca Sára
+9.B;Csornai Mátyás Bendegúz
+9.B;Dörömböző Celesztina Bettina
+9.B;Gere Márton
+9.B;Hir Bálint
+9.B;Iván Máté
+9.B;Kálmán-Biró Benedek
+9.B;Karabencsov Mirkó Bende
+9.B;Kerekes Réka
+9.B;Kiss András
+9.B;Kiss Emma
+9.B;Kustos Balázs
+9.B;Marton Kitti
+9.B;Mátyási Dóra
+9.B;Molnár Léna
+9.B;Molnár Zsófia
+9.B;Mosoni Helga Irina
+9.B;Müller Márton
+9.B;Petkov-Kristov Péter Gergő
+9.B;Pető Blanka
+9.B;Posza Ádám Zorán
+9.B;Pozsgai Aliz Míra
+9.B;Ress Emma Csenge
+9.B;Sudár Boldizsár
+9.B;Tippel Evelin
+9.B;Tóth Áron
+9.B;Vida Eszter Dorka
+9.B;Vörös Anna Júlia
+9.B;Zólyomi Lara
+9.B;Zsálek Rita Boglárka
+9.C;Árvai Aliz
+9.C;Balázs Ákos
+9.C;Borbély Kata
+9.C;Csendes Bianka Klaudia
+9.C;Fodor Máté
+9.C;Forró Zsófia
+9.C;Heffer Áron István
+9.C;Jóföldi Zsóka
+9.C;Kalmár Lili Kata
+9.C;Karsai Balázs
+9.C;Kemény Péter Sámuel
+9.C;Kovács Marcell
+9.C;Kováts Donát
+9.C;Kozics Petra
+9.C;Laczó Eszter
+9.C;Lassu Flóra
+9.C;Lepere Iebe
+9.C;Mike Salomé Boróka
+9.C;Molnár Dániel
+9.C;Monostori Míra
+9.C;P. Kovács Panka Dóra
+9.C;Rigó Bianka
+9.C;Schell Zsanett
+9.C;Simon Ádám Dániel
+9.C;Szabó Áron Lőrinc
+9.C;Tóth Eszter
+9.C;Tóthi Jeromos Simon
+9.C;Tóthi Szófia Viktória
+9.C;Varga Laura Lujza
+9.C;Vörös Marcell
+9.C;Zvara Dávid Benjámin
+9.C;Zsalakovics Míra
+9.D;Bakó Luca
+9.D;Bihari Csepke
+9.D;Csábi Gergő Géza
+9.D;Cseplits Gabriella
+9.D;Dér Lotti
+9.D;Fülöp Gergely
+9.D;Gáspár Milán Péter
+9.D;Gazda Véda
+9.D;Gécsek Rebeka Dorka
+9.D;Inkei Fanni
+9.D;Kametler Anna
+9.D;Kemény Dániel
+9.D;Király Balázs
+9.D;Lázár Anna
+9.D;Major Dávid
+9.D;Márfi Daniéla Viktória
+9.D;Mettner Melitta Liliána
+9.D;Nagy Boglárka
+9.D;Ötvös Réka Elena
+9.D;Pajor Kristóf János
+9.D;Rőhrig Laura Róza
+9.D;Szalai Bendegúz
+9.D;Szarka Balázs
+9.D;Takács Gergő
+9.D;Tell Boglárka
+9.D;Tóth Rozina Csenge
+9.D;Varga Eszter Anna
+9.D;Varga Györk
+9.D;Vurovecz Blanka
+9.F;Bogdán Barbara
+9.F;Breglovics Bianka
+9.F;Dózsa Kincső Bianka
+9.F;Druzsin Mercédesz
+9.F;Gócza Dorottya
+9.F;Gondon Zsolt
+9.F;Gulyás Csenge
+9.F;Halász Judit Anasztázia
+9.F;Holczbauer Jázmin
+9.F;Horváth Csenge Márta
+9.F;József Bíborka
+9.F;Juhász Beatrix
+9.F;Kuti Beáta Terézia
+9.F;Miseta Milán
+9.F;Mocz András Olivér
+9.F;Nyerlucz Amanda Ilona
+9.F;Orsós Jázmin
+9.F;Orsós Krisztián Balázs
+9.F;Sántha Tibor
+9.F;Szalai Mária Anna
+9.F;Szijártó Mária Csilla
+9.F;Tóth Zsombor András
+9.F;Végh Tamás Gyula
+9.F;Völfinger Rebeka
+10.A;Bedi Boglárka
+10.A;Boda Sára
+10.A;Csontos Dominik
+10.A;Fehér Koppány
+10.A;Hajdu Márton
+10.A;Harsányi Mátyás
+10.A;Hegedüs Noémi
+10.A;Herbán Zoltán Ferenc
+10.A;Heresznyei Richárd
+10.A;Hollósi Fanni
+10.A;Horváth Anna
+10.A;Jandzsó Marcell
+10.A;Jetter Marcell
+10.A;Jónás Réka Anna
+10.A;Kelemen Botond
+10.A;Kigyósi Marcell
+10.A;Kóczián Hanna Eszter
+10.A;Kódai Dorina
+10.A;Kovács Gábor
+10.A;Kudich Antal
+10.A;Kulifai Mátyás Rafael
+10.A;Kun Anna
+10.A;Lenkei Anna
+10.A;Major Milán Tibor
+10.A;Mezriczky Ottilia
+10.A;Nagy Virág
+10.A;Nedeczky Karolina
+10.A;Paluska Emese
+10.A;Skotnyár Éva
+10.A;Szekér Anna Petra
+10.A;Varga János
+10.B;Bene Barnabás
+10.B;Bogdán Dávid Bence
+10.B;Bokor János
+10.B;Borda Laura Katalin
+10.B;Bukovics Gréta Emese
+10.B;Csorba Alexandra
+10.B;Dani Bulcsú
+10.B;Éles Márton
+10.B;Fenyvesi Zorka
+10.B;Gadácsi Dóra
+10.B;Galla Mátyás
+10.B;Gáspár András
+10.B;Horváth Máté Zoltán
+10.B;István Boglárka
+10.B;Jani Klaudia Krisztina
+10.B;Kada Liza
+10.B;Kammerloher Vivien
+10.B;Kelemen Kristóf
+10.B;Király Csaba
+10.B;Király Dániel
+10.B;Kis-Jónás Csilla Jázmin
+10.B;Komlóssy Balázs
+10.B;Kovács Luca
+10.B;Kovács Mercédesz
+10.B;Mihály Ábrahám
+10.B;Nagy Natália Julianna
+10.B;Papp Angelika
+10.B;Pohn Korina
+10.B;Pusztai Dóra Regina
+10.B;Récsei Orsolya Anna
+10.B;Renoa Arai
+10.B;Somogyi Márk Zsolt
+10.B;Szántó Réka
+10.B;Szombathelyi Tenke
+10.B;Tóth Bence Barnabás
+10.B;Váradi Léna
+10.B;Varga Kornél Attila
+10.B;Vida Zalán Csongor
+10.B;Zsombok Zsóka
+10.C;Balázs Kata
+10.C;Barabás Lara Kata
+10.C;Bereczki Lili Eszter
+10.C;Budavári Dóra
+10.C;Csuz Áron
+10.C;Faludy Réka
+10.C;Gombos Mirella
+10.C;Hartmann Bende
+10.C;Hegedüs András Mátyás
+10.C;Juhász Hanna
+10.C;Khern Kata Veronika
+10.C;Korvicska Péter
+10.C;Kovács Krisztián
+10.C;Lilik Csenge
+10.C;Matucza Tímea Laura
+10.C;Nagy Ábel József
+10.C;Nagyváradi Dávid
+10.C;Őszi Nóra
+10.C;Pilbauer Blanka
+10.C;Ráczkevi Hanna
+10.C;Sajtos Péter Gergő
+10.C;Stier Dominik
+10.C;Szabolcsi Dóra
+10.C;Szőke Zsombor
+10.C;Szörényi Mihály
+10.C;Telkes Tíra
+10.C;Tóth Gergő Lóránt
+10.C;Vajda Anna
+10.C;Vajda Zsófia
+10.C;Varga Lénárd Zsombor
+10.C;Vati Áron Hunor
+10.C;Virág Benedek Balázs
+10.C;Walter Dorina
+10.C;Wolstrommer Viktória
+10.D;Babos Fanni
+10.D;Balogh Ádám
+10.D;Bebes Kata Eszter
+10.D;Bíró László
+10.D;Bogdán Tamás István
+10.D;Cseh Kornélia
+10.D;Csizmadia Dorián
+10.D;Erdős Borbála
+10.D;Gál Bence Zoltán
+10.D;Gasparics Olivér
+10.D;Godó Antónia
+10.D;Győrfi Larina
+10.D;Hock Dorottya
+10.D;Kadaravek Kamilla
+10.D;Kardos Eszter
+10.D;Kelemen Ákos
+10.D;Kiss Péter
+10.D;Magyarcsik Dávid
+10.D;Makray Ádám Gábor
+10.D;Maza Fanni Luca
+10.D;Murphy Adam Sebastian
+10.D;Nagy Balázs Levente
+10.D;Németh Márton
+10.D;Novák Andrea
+10.D;Őszi Janka
+10.D;Pillér Andrea Vera
+10.D;Posza Máté Dávid
+10.D;Sándor Kinga
+10.D;Szabó Laura
+10.D;Szabó Száva Hargita
+10.D;Telekes Barnabás József
+10.D;Tóth Dávid
+10.D;Török Zsombor
+10.D;Vipler Bálint
+10.F;Ambrus Attila
+10.F;Beluzic Kármen
+10.F;Bogdán Boglárka
+10.F;Dénes Anna
+10.F;Fehérvári Dzsesszika Anna
+10.F;Golub Anna
+10.F;Gregor Dóra Mercédesz
+10.F;Gyurka Eliza
+10.F;Hornicz Viktória Mária
+10.F;Illés Márton
+10.F;Kisdeák Nóra Orsolya
+10.F;Klotz József
+10.F;Lender Martin
+10.F;Molnár Aurél
+10.F;Mustos Absolon
+10.F;Orsós Noémi
+10.F;Rajczi Rita
+10.F;Simon Balázs
+10.F;Steer Katalin Kitti
+10.F;Sütő Virág Petra
+10.F;Szabó Viktória Ildikó
+10.F;Varju Ákos
+11.A;Barabás Cintia
+11.A;Dross Izabell
+11.A;Fenesi Gergő
+11.A;Fodor Krisztina Anna
+11.A;Frang Mercédesz
+11.A;Fuisz Soma Máté
+11.A;Gőgös Boglárka
+11.A;Horváth Gréta Eszter
+11.A;Kassai Mátyás
+11.A;Kaszti Tünde Veronika
+11.A;Kátai Flóra Vivien
+11.A;Katona Gréta
+11.A;Kiss Csenge Zoé
+11.A;Komor Máté Vilmos
+11.A;Kovács Kendra
+11.A;Laczó Zétény Dániel
+11.A;Laky Zsombor
+11.A;Marics Csongor
+11.A;Marics Hunor
+11.A;Molnár Levente
+11.A;Nemes Liza Boróka
+11.A;Németh Márton
+11.A;Ottó Fruzsina
+11.A;Petrovics Panna Zsófia
+11.A;Somlai Dániel
+11.A;Surányi László
+11.A;Szabó Lajos Dániel
+11.A;Szabó Zsombor István
+11.A;Szombathelyi Zsófia
+11.A;Tilesch Márton
+11.A;Vajda Donát
+11.A;Zadravecz Enikő
+11.B;Bauer Cintia Júlia
+11.B;Bogdán Natália
+11.B;Bolevácz Dina
+11.B;Bőhm Ivett
+11.B;Csurai Nóra
+11.B;Éles Míra
+11.B;Gerencsér Doboka János
+11.B;Gyurka Péter
+11.B;Herceg Kristóf
+11.B;Horváth Hanna
+11.B;Kántor Péter
+11.B;Kiss Luca
+11.B;Kiss Virág
+11.B;Laczó Fanni
+11.B;Maronics Petra
+11.B;Máté Abigél
+11.B;Nagy Dorottya
+11.B;Ölveti Júlia Anna
+11.B;Papp Vivien
+11.B;Passa Dorka
+11.B;Pitz Bettina Virág
+11.B;Posza Dorina
+11.B;Puha Krisztina
+11.B;Rudolf Julianna Zsófia
+11.B;Schindler Viktória
+11.B;Stier Márton
+11.B;Szabó Levente Péter
+11.B;Trungel Sára Zsuzsanna
+11.B;Wood Emma Zoé
+11.C;Andok Máté Levente
+11.C;Embersics Aliz
+11.C;Farkas Júlia
+11.C;Godina Bence Botond
+11.C;Gordán Borbála
+11.C;Hegedüs János
+11.C;Horváth Patrícia
+11.C;Papp Bálint
+11.C;Papp Barnabás
+11.C;Papp Milán
+11.C;Pedranzini Ernesto
+11.C;Száraz Anna Tamara
+11.C;Szijártó Zsófia Lea
+11.C;Takács Dominik Olivér
+11.C;Tiszperger Dorina
+11.C;Tóth Donát Boldizsár
+11.C;Tóth Karina
+11.C;Tóth Zsófia
+11.C;Török Martin
+11.C;Varga Kristóf
+11.C;Várhelyi Panna
+11.C;Vida Hanna
+11.D;Bátori Soma
+11.D;Bebics Blanka
+11.D;Dancs Balázs András
+11.D;Dér Attila
+11.D;Dudás Emese Borbála
+11.D;Farkas Balázs Márk
+11.D;Fazekas Barbara Virág
+11.D;Fekécs Richárd
+11.D;Gyenesei Fanni Hajnalka
+11.D;Györgyi Ármin
+11.D;Hartmann Dániel
+11.D;Hepf Máté János
+11.D;Herceg Bálint
+11.D;Hollán Karolina
+11.D;Karlovics Pálma
+11.D;Korpádi Balázs
+11.D;Martinek Imre
+11.D;Nagy Bese András
+11.D;Nyirő Balázs
+11.D;Paczolai Bence Máté
+11.D;Pogány-Ormai András Lukács
+11.D;Szücs-Csillik Fürtike
+11.D;Ulrich Szilárd
+11.D;Vas Nándor Tibor
+11.F;Boncz Péter Botond
+11.F;Dancs Zsanett
+11.F;Fekete Attila
+11.F;Ferenczi András János
+11.F;Ficsor Andor Gergely
+11.F;Geréb Janka
+11.F;Gulyás Győző
+11.F;Hajdu Virág Anasztázia
+11.F;Huber Barna
+11.F;Katona Sára Anna
+11.F;Kimmel Fanni Sára
+11.F;Knébel Anna
+11.F;Kovács Péter
+11.F;Markán Bertalan Sámuel
+11.F;Muraközi Nikolett
+11.F;Orsós Molli Bernadett
+11.F;Radó Szilvia
+11.F;Vámosi Virág
+TO;Karlovics Jázmin
+TO;Vati Kamilla Kató
+12.A;Antal Regina
+12.A;Babos Viktória
+12.A;Balogh Péter
+12.A;Becker Georgina
+12.A;Borbély Bálint József
+12.A;Fogarasi András
+12.A;Godó Máté
+12.A;Harsányi Dorottya
+12.A;Hegedüs Lilla
+12.A;Horváth Botond
+12.A;Horváth Lilla
+12.A;Inkei Luca
+12.A;Jóföldi Eszter
+12.A;Károly Zalán
+12.A;Kárpáti Anna Eszter
+12.A;Katona Réka
+12.A;Kiss Alexander Dominik
+12.A;Kovács Zsófia
+12.A;Limbek Leila
+12.A;Mosoni Konrád Gyula
+12.A;Paár Flóra
+12.A;Pácsonyi Petra
+12.A;Papp Martin
+12.A;Peti Viola
+12.A;Petőh Ármin
+12.A;Simon Lea Eszter
+12.A;Takács Antónia Kira
+12.A;Tamás Bence
+12.A;Tamás Vanda
+12.A;Tornyos Gergely Álmos
+12.A;Tóth Bálint
+12.A;Tóth Dominik József
+12.A;Vajda Virág Vivien
+12.A;Vida Rebeka Julianna
+12.A;Vida Zóra Eszter
+12.A;Zenko Varvara
+12.B;Bodó Bence
+12.B;Boros Boglárka
+12.B;Bús Boglárka Veronika
+12.B;Cuhijev Fatima
+12.B;Csiktusnádi-Kiss Vince
+12.B;Csordás Gergely
+12.B;Faludy András Miklós
+12.B;Guth Dorina Tímea
+12.B;Jóföldi Pál Dávid
+12.B;Kada Zsófia
+12.B;Kelemen Dávid
+12.B;Marosi Blanka
+12.B;Nagy Sára Kamilla
+12.B;Paár Eszter Margó
+12.B;Paár Janka Lili
+12.B;Pintér Noémi
+12.B;Puskás Emma Dorottya
+12.B;Schneiker Richárd Milán
+12.B;Simon Emese
+12.B;Sipos Zorka Gréta
+12.B;Sörös Kata
+12.B;Stéger Dominik
+12.B;Sümeyye Gökcen Yazici
+12.B;Szabó Tamás Lajos
+12.B;Szalai Dóra
+12.B;Szarka Miklós Zoltán
+12.B;Szász Bence
+12.B;Szép Tímea
+12.B;Trevisán Tamás
+12.B;Való Ákos Levente
+12.B;Varga Zsófia
+12.B;Zab Marcell Dávid
+12.C;Andalics Gergő Benedek
+12.C;Barabás Alexa
+12.C;Berendi Barnabás
+12.C;Bierer Bianka
+12.C;Boda Vince Vazul
+12.C;Both Dániel József
+12.C;Farkas Mónika
+12.C;Gombos Zalán
+12.C;Göcz Domonkos
+12.C;Havriló Eszter
+12.C;Hegyeshalmi Réka
+12.C;Hosszu Johanna
+12.C;Kakuk Keve Zoltán
+12.C;Kósa Alexandra
+12.C;Magyar Péter
+12.C;Ojtó Zsombor
+12.C;Ország Vivien Letícia
+12.C;Pojtner Dóra
+12.C;Szabó Éva Boglárka
+12.C;Szabó Kata Zsófia
+12.C;Szilvási Maja
+12.C;Tajnafői Nóra
+12.C;Telkes Tamara
+12.C;Teruzzi Lorenzo Teodoro
+12.C;Tóth Ádám Lóránt
+12.C;Tóth Laura
+12.C;Tóth Nelli
+12.C;Vértes Dorottya
+12.C;Zana Fanni
+12.D;Baracsi Róbert
+12.D;Bóla Gergely
+12.D;Fábri Béla Bence
+12.D;Galambos Bertalan
+12.D;Gerbovits Fanni Virág
+12.D;Ház Bence
+12.D;Ihárosi Dorka
+12.D;Jakab Vince
+12.D;Kacsó Júlia Csenge
+12.D;Kadarkuti Bence
+12.D;Kohán Péter
+12.D;Lamann Mátyás
+12.D;Leidli Gergő
+12.D;Magyar Attila Dávid
+12.D;Merkei Anna
+12.D;Mező Lili
+12.D;Miovecz Máté
+12.D;Nagy Eszter
+12.D;Papp Márk
+12.D;Pintér Ádám
+12.D;Stadler Bálint
+12.D;Szabó Benedek Zoltán
+12.D;Szabó Kitti
+12.D;Szeiler-Borbély Barnabás
+12.D;Szlávecz Fanni
+12.D;Tippel Krisztián
+12.D;Varga Domonkos Benjámin
+12.F;Bakai Kitti
+12.F;Bakai Réka
+12.F;Béres Gabriella
+12.F;Bódis Ármin László
+12.F;Dávid Alexandra
+12.F;Gáspár Róbert
+12.F;Hageman Sterre Lizzy
+12.F;Koseluk Bence Gábor
+12.F;Kovács Norbert
+12.F;Lőrincz Bálint
+12.F;Ludvig Patrik
+12.F;Nagy András
+12.F;Orbán Kata
+12.F;Orbán Sára
+12.F;Orsós Bernadett Szilvia
+12.F;Orsós Dorina
+12.F;Orsós Gyöngyi
+12.F;Pusztai Olivér Csaba
+12.F;Rózsa Virág Dominika
+12.F;Szoták Dominik
+12.F;Takács Bálint Levente
+12.F;Tombor Máté
+12.F;Varga Bence
+12.F;Varga Viktória
+12.F;Vulczer Bertold

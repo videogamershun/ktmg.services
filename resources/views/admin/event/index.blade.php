@@ -60,7 +60,7 @@ function userHasPermission()
                         $events = DB::table('event_main')->get();
                         foreach ($events as $event) {
                             if ($event->id == $event_id) {
-                                if ($event->owner == Auth::user()->name) {
+                                if ($event->owner == Auth::user()->id) {
                                     return 1;
                                 }
                             }
@@ -72,6 +72,8 @@ function userHasPermission()
                     $events = DB::table('event_main')->get();
                     $countable = 0;
                     foreach ($events as $event) {
+                        $userName = DB::table("users")->where("id", $event->owner)->value("name");
+
                         if (user_has_event($event->id)) {
                             $countable += 1;
                             echo '
@@ -80,7 +82,7 @@ function userHasPermission()
                                                     <div class="card bg-light d-flex flex-fill">
                                                       <div class="card-header text-muted border-bottom-0">
                                                        ' .
-                                $event->owner .
+                                                       $userName  .
                                 '
                                                       </div>
                                                       <div class="card-body pt-0">

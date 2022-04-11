@@ -36,7 +36,9 @@
                             <div class="card-body">
                                 <div class="form-group">
                                     <label>Esemény - létrehozó</label>
-                                    <input type="text" class="form-control" name="owner" value="{{ Auth::user()->name }}"
+                                    <input type="text" class="form-control" name="owner" value="{{ Auth::user()->id }}"
+                                        hidden>
+                                    <input type="text" class="form-control"  value="{{ Auth::user()->name }}"
                                         readonly>
                                 </div>
                                 <div class="form-group">
@@ -86,6 +88,9 @@
                                             <option>9.D</option>
                                             <option>9.F</option>
                                             <option>9.AJTP</option>
+                                        </optgroup>
+                                        <optgroup label="Egyéb">
+                                            <option>Iskola</option>
                                         </optgroup>
                                     </select>
                                 </div>

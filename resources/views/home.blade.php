@@ -10,20 +10,20 @@
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/hu_HU/sdk.js#xfbml=1&version=v13.0"
         nonce="YJePdOIP"></script>
 
-        <?php
+    <?php
     
-        function userHasPermission()
-        {
-            if (Auth::user()->hasPermissionTo('home.index')) {
-            } else {
-                header('Location: /');
-                die();
-            }
+    function userHasPermission()
+    {
+        if (Auth::user()->hasPermissionTo('home.index')) {
+        } else {
+            header('Location: /');
+            die();
         }
-        
-        userHasPermission();
-        
-        ?>
+    }
+    
+    userHasPermission();
+    
+    ?>
     <br />
     <section class="content">
         <div class="container-fluid">
@@ -49,22 +49,21 @@
                     </div>
                 </div>
                 <!-- ./col -->
-                
+
                 <!-- ./col -->
             </div>
             <!-- /.row -->
 
     </section>
     <section class="content">
-
         <!-- Default box -->
         <div class="card card-primary">
-          <div class="card-header">
-            <h3 class="card-title">Social</h3>
-          </div>
+            <div class="card-header">
+                <h3 class="card-title">Social</h3>
+            </div>
             <div class="card-body pb-0">
-              
-           
+
+
                 <div class="row">
 
 
@@ -92,7 +91,8 @@
                                     data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
                                     <blockquote cite="https://www.facebook.com/KTMGOfficial" class="fb-xfbml-parse-ignore">
                                         <a href="https://www.facebook.com/KTMGOfficial">Kaposvári Táncsics Mihály
-                                            Gimnázium</a></blockquote>
+                                            Gimnázium</a>
+                                    </blockquote>
                                 </div>
                             </div>
                         </div>

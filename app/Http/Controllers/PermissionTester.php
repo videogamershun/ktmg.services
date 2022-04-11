@@ -15,19 +15,23 @@ class PermissionTester extends Controller
 {
     public function create_permission()
     {
-        
-      echo("Sikerült");
+
+        echo ("Sikerült");
     }
     public function create_role()
     {
         Role::create(['name' => 'Admin']);
-        echo("Sikerült");
+        echo ("Sikerült");
     }
     public function give_role()
     {
 
         Auth::user()->removeRole('Tanár');
         Auth::user()->assignRole('Admin');
-        echo("Sikerült");
+        echo ("Sikerült");
+    }
+    public function throttleKey(Request $request)
+    {
+        return Str::lower($request->input($this->username()));
     }
 }
